@@ -33,4 +33,9 @@ public class BookService {
                 .build();
                 return  bookRepository.save(build);
     }
+
+    public Book retrieveById(Long id) {
+        Book byBookId = bookRepository.findById(id).orElseThrow(() -> new RuntimeException(""));
+        return byBookId;
+    }
 }

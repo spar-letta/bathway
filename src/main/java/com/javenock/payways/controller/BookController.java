@@ -21,4 +21,10 @@ public class BookController {
     public Book createBook(@RequestBody BookRequest bookRequest){
         return bookService.createBook(bookRequest);
     }
+
+    @GetMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public Book getBookById(@PathVariable Long id){
+        return bookService.retrieveById(id);
+    }
 }
